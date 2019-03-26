@@ -1,0 +1,34 @@
+<h2 style="text-align: center">A Simple web app</h2>
+<span style="font-weight: bolder">OrderBy: </span>
+<select name="" id="">
+  <option *ngFor="let item of items" (click) = "checkItem(item)">{{item}}</option>
+</select>
+<br>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Birthday</th>
+        <th>Salary</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listDataApp">
+          <th>{{data.id}}</th>
+          <th>{{data.firstName}}</th>
+          <th>{{data.lastName}}</th>
+          <th>{{data.email}}</th>
+          <th>{{data.gender}}</th>
+          <th>{{data.birthday | date:'MM/dd/yyyy'}}</th>
+          <th>{{data.salary}}</th>
+          <th>{{data.phone | replace}}</th>
+      </tr>      
+    </tbody>
+  </table>
+</div>
