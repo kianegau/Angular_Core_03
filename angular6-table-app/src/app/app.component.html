@@ -1,7 +1,7 @@
 <h2 style="text-align: center">A Simple web app</h2>
 <span style="font-weight: bolder">OrderBy: </span>
-<select name="" id="">
-  <option *ngFor="let item of items" (click) = "checkItem(item)">{{item}}</option>
+<select  (change) = "getItem($event)">
+  <option *ngFor="let item of items" [value]="item">{{item}}</option>
 </select>
 <br>
 <div class="container">
@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of listDataApp">
+      <tr *ngFor="let data of listDataApp | orderBy: selectedOrder ">
           <th>{{data.id}}</th>
           <th>{{data.firstName}}</th>
           <th>{{data.lastName}}</th>
